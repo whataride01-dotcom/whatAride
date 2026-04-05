@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>whatAride.in | Premium Cab Service Bangalore</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1628;
+  --navy2:#0F1E35;
+  --navy3:#162540;
+  --navy4:#1E2F4D;
+  --gold:#C9A84C;
+  --gold2:#E8C86A;
+  --gold3:#F5E0A0;
+  --platinum:#E8EDF5;
+  --steel:#8A9BB5;
+  --steel2:#B4C3D8;
+  --white:#FFFFFF;
+  --text:#D0D9E8;
+  --accent:#4A90D9;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* NOISE TEXTURE OVERLAY */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:.4
+}
+
+/* TOPBAR */
+.tb{
+  background:var(--gold);
+  padding:8px 5%;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.72rem;font-weight:600;letter-spacing:.5px;
+  color:var(--navy);
+}
+.tb a{color:var(--navy);display:flex;align-items:center;gap:5px}
+.tbr{display:flex;gap:22px;flex-wrap:wrap}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:999;
+  background:rgba(11,22,40,.96);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(201,168,76,.12);
+  padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  height:70px;
+}
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.55rem;font-weight:700;letter-spacing:-0.5px;
+  color:var(--white);
+}
+.logo span{color:var(--gold)}
+.logo sub{font-size:.5rem;font-weight:400;color:var(--steel);font-family:'DM Sans',sans-serif;vertical-align:middle;letter-spacing:1px;text-transform:uppercase}
+.nm{display:flex;align-items:center;gap:28px}
+.nm a{font-size:.82rem;font-weight:500;color:var(--steel2);transition:color .2s;letter-spacing:.3px}
+.nm a:hover{color:var(--gold)}
+.nm .ncta{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--navy);
+  padding:9px 20px;border-radius:6px;
+  font-weight:700;font-size:.82rem;
+  letter-spacing:.3px;
+  transition:all .2s;
+}
+.nm .ncta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,168,76,.3)}
+.bur{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.bur span{width:22px;height:1.5px;background:var(--gold);border-radius:2px}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background:var(--navy);
+}
+.hero-geo{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(74,144,217,.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 85% 20%, rgba(201,168,76,.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 70% at 10% 80%, rgba(15,30,53,.9) 0%, transparent 70%);
+}
+.hero-lines{
+  position:absolute;inset:0;overflow:hidden;
+}
+.hero-lines::before{
+  content:'';position:absolute;
+  top:-20%;right:0;width:55%;height:140%;
+  background:
+    linear-gradient(135deg,transparent 45%,rgba(201,168,76,.04) 45%,rgba(201,168,76,.04) 46%,transparent 46%),
+    linear-gradient(135deg,transparent 55%,rgba(74,144,217,.03) 55%,rgba(74,144,217,.03) 56%,transparent 56%);
+  border-left:1px solid rgba(201,168,76,.08);
+}
+.hero-img{
+  position:absolute;right:0;top:0;width:52%;height:100%;
+  background:url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1000&q=80') center/cover;
+  clip-path:polygon(12% 0,100% 0,100% 100%,0 100%);
+}
+.hero-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right,var(--navy) 0%,rgba(11,22,40,.7) 40%,rgba(11,22,40,.3) 100%);
+}
+.hc{position:relative;z-index:2;padding:0 5%;max-width:620px}
+.hbadge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.25);
+  color:var(--gold2);
+  font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  padding:6px 14px;border-radius:3px;
+  margin-bottom:24px;
+}
+.hdot{width:5px;height:5px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.6rem,5vw,4.2rem);
+  font-weight:900;line-height:1.08;
+  letter-spacing:-1.5px;
+  color:var(--white);
+  margin-bottom:20px;
+}
+.hero h1 em{
+  font-style:italic;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  display:block;
+}
+.hero p{font-size:.95rem;color:var(--steel2);line-height:1.8;margin-bottom:32px;max-width:480px}
+.hbts{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--navy);
+  padding:13px 26px;border-radius:6px;
+  font-weight:700;font-size:.88rem;letter-spacing:.3px;
+  border:none;cursor:pointer;
+  transition:all .25s;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,168,76,.25)}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#25d366;color:#fff;
+  padding:13px 26px;border-radius:6px;
+  font-weight:700;font-size:.88rem;
+  transition:all .25s;
+}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,.2)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;
+  color:var(--platinum);
+  border:1px solid rgba(232,237,245,.2);
+  padding:13px 26px;border-radius:6px;
+  font-weight:500;font-size:.88rem;
+  transition:all .25s;cursor:pointer;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hst{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(201,168,76,.15);
+  padding-top:28px;
+  gap:8px;
+}
+.hs{text-align:left;padding-right:16px;border-right:1px solid rgba(201,168,76,.1)}
+.hs:last-child{border-right:none}
+.hsn{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:700;
+  color:var(--white);line-height:1;
+  margin-bottom:4px;
+}
+.hsn span{color:var(--gold);font-size:1.2rem}
+.hsl{font-size:.68rem;color:var(--steel);letter-spacing:.5px;text-transform:uppercase}
+
+/* BOOKING SECTION */
+.bk{
+  background:var(--navy2);
+  border-top:1px solid rgba(201,168,76,.12);
+  border-bottom:1px solid rgba(201,168,76,.12);
+  padding:52px 5%;
+}
+.bk-inner{max-width:1100px;margin:0 auto}
+.bk h2{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;font-weight:700;
+  color:var(--white);
+  margin-bottom:6px;
+  text-align:center;
+}
+.bk-sub{text-align:center;color:var(--steel);font-size:.85rem;margin-bottom:28px}
+.tabs{
+  display:flex;background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:8px;padding:4px;
+  margin:0 auto 28px;max-width:500px;
+}
+.tab{
+  flex:1;padding:9px 4px;
+  border:none;background:transparent;
+  color:var(--steel);font-weight:500;font-size:.78rem;
+  border-radius:6px;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:all .2s;letter-spacing:.3px;
+}
+.tab.on{background:var(--gold);color:var(--navy);font-weight:700}
+.bk-form{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(201,168,76,.1);
+  border-radius:12px;padding:28px;
+}
+.fr{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:14px;align-items:end}
+.fr2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
+.fg{display:flex;flex-direction:column;gap:7px}
+.fg label{
+  font-size:.65rem;font-weight:700;
+  color:var(--steel);letter-spacing:1.5px;text-transform:uppercase;
+}
+.fg input,.fg select{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.09);
+  color:var(--white);
+  border-radius:7px;padding:12px 14px;
+  font-size:.86rem;outline:none;
+  font-family:'DM Sans',sans-serif;
+  appearance:none;
+  transition:border-color .2s;
+}
+.fg input:focus,.fg select:focus{border-color:var(--gold)}
+.fg input::placeholder{color:var(--steel)}
+.fg select option{background:var(--navy3);color:var(--white)}
+.qbtn{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--navy);border:none;
+  border-radius:7px;padding:13px 24px;
+  font-size:.88rem;font-weight:700;
+  font-family:'DM Sans',sans-serif;cursor:pointer;
+  white-space:nowrap;letter-spacing:.3px;
+  transition:all .25s;
+}
+.qbtn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(201,168,76,.3)}
+
+/* SECTION COMMONS */
+.sec{padding:80px 5%}
+.sh{text-align:center;margin-bottom:52px}
+.stag{
+  display:inline-block;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.2);
+  color:var(--gold);
+  font-size:.65rem;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;
+  padding:5px 14px;border-radius:3px;
+  margin-bottom:14px;
+}
+.st{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3.5vw,2.8rem);
+  font-weight:700;
+  color:var(--white);
+  letter-spacing:-.5px;line-height:1.15;
+  margin-bottom:14px;
+}
+.ss{color:var(--steel);font-size:.9rem;line-height:1.8;max-width:520px;margin:0 auto}
+
+/* FEATURES STRIP */
+.ft{background:var(--navy3);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1)}
+.ft-inner{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  max-width:1100px;margin:0 auto;
+}
+.fc{
+  padding:28px 24px;
+  display:flex;gap:14px;align-items:flex-start;
+  border-right:1px solid rgba(255,255,255,.05);
+  transition:background .2s;
+}
+.fc:last-child{border-right:none}
+.fc:hover{background:rgba(201,168,76,.04)}
+.fi{
+  width:42px;height:42px;flex-shrink:0;
+  border-radius:8px;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.18);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+}
+.fc h4{font-size:.86rem;font-weight:700;color:var(--white);margin-bottom:3px}
+.fc p{font-size:.76rem;color:var(--steel);line-height:1.5}
+
+/* SERVICES */
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:0 auto}
+.sc{
+  background:var(--navy2);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:12px;overflow:hidden;
+  transition:all .35s;cursor:pointer;
+  position:relative;
+}
+.sc:hover{border-color:rgba(201,168,76,.3);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.si{height:190px;overflow:hidden;position:relative}
+.si img{width:100%;height:100%;object-fit:cover;transition:transform .6s;filter:brightness(.7)}
+.sc:hover .si img{transform:scale(1.06);filter:brightness(.85)}
+.sov{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,22,40,.85),transparent 55%)}
+.slb{
+  position:absolute;bottom:12px;left:12px;
+  background:var(--gold);color:var(--navy);
+  font-size:.63rem;font-weight:700;
+  padding:4px 10px;border-radius:3px;
+  letter-spacing:.8px;text-transform:uppercase;
+}
+.sb{padding:20px}
+.sb h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:8px}
+.sb p{font-size:.8rem;color:var(--steel);line-height:1.65;margin-bottom:12px}
+.sl{
+  font-size:.76rem;font-weight:700;
+  color:var(--gold);letter-spacing:.5px;
+  display:flex;align-items:center;gap:5px;
+}
+.sl::after{content:'→';transition:transform .2s}
+.sc:hover .sl::after{transform:translateX(4px)}
+
+/* FLEET */
+.flg{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1050px;margin:0 auto}
+.flc{
+  background:var(--navy2);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:14px;overflow:hidden;
+  transition:all .35s;
+}
+.flc:hover{border-color:rgba(201,168,76,.3);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.fli{height:200px;overflow:hidden;position:relative}
+.fli img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:brightness(.85)}
+.flc:hover .fli img{transform:scale(1.05);filter:brightness(1)}
+.flbg{
+  position:absolute;top:12px;right:12px;
+  background:rgba(11,22,40,.88);
+  border:1px solid rgba(201,168,76,.3);
+  color:var(--gold);
+  font-size:.62rem;font-weight:700;
+  padding:4px 10px;border-radius:3px;
+  letter-spacing:.8px;text-transform:uppercase;
+}
+.flb{padding:20px}
+.flb h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:6px}
+.flb p{font-size:.8rem;color:var(--steel);line-height:1.6;margin-bottom:14px}
+.flt{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px}
+.fltg{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.09);
+  color:var(--steel2);
+  font-size:.67rem;font-weight:500;
+  padding:4px 10px;border-radius:3px;
+}
+.flr{
+  display:flex;align-items:center;justify-content:flex-end;
+  padding-top:14px;border-top:1px solid rgba(255,255,255,.06);
+}
+.flbt{
+  background:rgba(201,168,76,.1);
+  border:1px solid rgba(201,168,76,.25);
+  color:var(--gold);
+  font-size:.75rem;font-weight:700;
+  padding:8px 16px;border-radius:6px;
+  cursor:pointer;transition:all .2s;
+  font-family:'DM Sans',sans-serif;
+  letter-spacing:.3px;
+}
+.flbt:hover{background:var(--gold);color:var(--navy)}
+
+/* HOW */
+.hw{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  max-width:960px;margin:0 auto;
+  position:relative;gap:20px;
+}
+.hw-line{
+  position:absolute;top:32px;left:14%;right:14%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.3) 20%,rgba(201,168,76,.3) 80%,transparent);
+}
+.hs2{text-align:center;padding:0 10px;position:relative;z-index:1}
+.stn{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--navy3);
+  border:1.5px solid rgba(201,168,76,.3);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 18px;
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;font-weight:700;color:var(--gold);
+  transition:all .3s;
+}
+.hs2:hover .stn{background:var(--gold);color:var(--navy);border-color:var(--gold);box-shadow:0 0 30px rgba(201,168,76,.3)}
+.step-icon{font-size:1.3rem;display:block;margin-bottom:6px}
+.hs2 h4{font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:5px}
+.hs2 p{font-size:.76rem;color:var(--steel);line-height:1.55}
+
+/* WHY */
+.wy{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;max-width:1050px;margin:0 auto;align-items:center}
+.wyi{position:relative;border-radius:16px;overflow:hidden;height:460px}
+.wyi img{width:100%;height:100%;object-fit:cover;filter:brightness(.7)}
+.wyi-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,22,40,.3),rgba(201,168,76,.05))}
+.wb1{
+  position:absolute;top:20px;left:20px;
+  background:rgba(11,22,40,.92);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(201,168,76,.25);
+  border-radius:10px;padding:14px 18px;
+}
+.wb1 .wn{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:700;
+  color:var(--gold);line-height:1;
+}
+.wb1 .wl{font-size:.68rem;color:var(--steel);margin-top:3px;letter-spacing:.5px}
+.wb2{
+  position:absolute;bottom:20px;right:20px;
+  background:var(--gold);
+  border-radius:10px;padding:13px 18px;
+  color:var(--navy);font-weight:700;font-size:.8rem;
+  text-align:center;line-height:1.4;max-width:165px;
+}
+.wfs{display:flex;flex-direction:column;gap:12px}
+.wf{
+  display:flex;gap:15px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:10px;padding:16px;
+  transition:all .2s;
+}
+.wf:hover{border-color:rgba(201,168,76,.2);background:rgba(201,168,76,.03)}
+.wfi{
+  width:40px;height:40px;border-radius:8px;flex-shrink:0;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.15);
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+}
+.wf h4{font-size:.86rem;font-weight:700;color:var(--white);margin-bottom:3px}
+.wf p{font-size:.77rem;color:var(--steel);line-height:1.5}
+
+/* TESTIMONIALS */
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1050px;margin:0 auto}
+.tc{
+  background:var(--navy2);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:12px;padding:26px;
+  transition:all .25s;
+  position:relative;overflow:hidden;
+}
+.tc::before{
+  content:'"';
+  position:absolute;top:-10px;right:16px;
+  font-family:'Playfair Display',serif;
+  font-size:8rem;line-height:1;
+  color:rgba(201,168,76,.05);
+  font-weight:900;
+}
+.tc:hover{border-color:rgba(201,168,76,.2);transform:translateY(-3px)}
+.tst{color:var(--gold);font-size:.8rem;letter-spacing:3px;margin-bottom:12px}
+.tq{font-size:.84rem;color:var(--steel2);line-height:1.78;margin-bottom:18px;font-style:italic}
+.ta{display:flex;align-items:center;gap:11px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06)}
+.tav{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:.88rem;color:var(--navy);flex-shrink:0;
+}
+.tn{font-weight:700;font-size:.84rem;color:var(--white)}
+.tl{font-size:.72rem;color:var(--steel)}
+
+/* PAYMENT */
+.pi{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.pc{
+  background:var(--navy3);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:8px;padding:12px 20px;
+  font-size:.8rem;font-weight:600;
+  color:var(--steel2);
+  display:flex;align-items:center;gap:7px;
+  transition:all .2s;
+}
+.pc:hover{border-color:rgba(201,168,76,.3);color:var(--white)}
+
+/* DESTINATIONS */
+.dg{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1050px;margin:0 auto}
+.dc{border-radius:12px;overflow:hidden;position:relative;height:195px;cursor:pointer;display:block}
+.dc img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:brightness(.6)}
+.dc:hover img{transform:scale(1.07);filter:brightness(.75)}
+.dov{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,22,40,.85),rgba(11,22,40,.1) 60%)}
+.di{position:absolute;bottom:14px;left:14px}
+.dn{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white)}
+.dd{font-size:.68rem;color:rgba(255,255,255,.6);margin-top:3px}
+.dc-gold{
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.dc:hover .dc-gold{transform:scaleX(1)}
+
+/* FAQ */
+.fq-w{max-width:760px;margin:0 auto}
+.fi2{
+  background:var(--navy2);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:10px;margin-bottom:10px;overflow:hidden;
+  transition:border-color .2s;
+}
+.fi2.op{border-color:rgba(201,168,76,.25)}
+.fq2{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:17px 22px;cursor:pointer;
+  font-weight:600;font-size:.86rem;color:var(--platinum);gap:12px;
+}
+.fic{
+  width:26px;height:26px;border-radius:6px;
+  background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.18);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:var(--gold);transition:all .25s;
+  font-size:.9rem;
+}
+.fi2.op .fic{background:var(--gold);color:var(--navy);rotate:45deg}
+.fa2{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s}
+.fi2.op .fa2{max-height:240px;padding:0 22px 18px}
+.fa2 p{font-size:.82rem;color:var(--steel);line-height:1.75}
+
+/* CTA SECTION */
+.cta-sec{
+  padding:80px 5%;text-align:center;
+  background:
+    linear-gradient(135deg,rgba(201,168,76,.05) 0%,transparent 50%,rgba(74,144,217,.03) 100%),
+    var(--navy3);
+  border-top:1px solid rgba(201,168,76,.12);
+  border-bottom:1px solid rgba(201,168,76,.08);
+  position:relative;overflow:hidden;
+}
+.cta-sec::before{
+  content:'';position:absolute;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:300px;
+  background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-sec h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4vw,3rem);font-weight:700;
+  color:var(--white);margin-bottom:12px;
+  position:relative;
+}
+.cta-sec p{color:var(--steel);margin-bottom:36px;position:relative}
+.ctas{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative}
+
+/* FOOTER */
+footer{background:var(--navy2);border-top:1px solid rgba(201,168,76,.1)}
+.fo{
+  padding:60px 5% 40px;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;
+  gap:42px;max-width:1300px;margin:0 auto;
+}
+.fbr .logo2{
+  font-family:'Playfair Display',serif;
+  font-size:1.45rem;font-weight:700;
+  color:var(--white);
+  display:block;margin-bottom:14px;
+}
+.fbr p{font-size:.8rem;color:var(--steel);line-height:1.75;max-width:280px}
+.fsc{display:flex;gap:8px;margin-top:18px}
+.fsb{
+  width:36px;height:36px;border-radius:7px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.88rem;transition:all .2s;
+}
+.fsb:hover{background:rgba(201,168,76,.15);border-color:rgba(201,168,76,.3)}
+footer h5{
+  font-size:.65rem;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+}
+.fl{display:flex;flex-direction:column;gap:9px}
+.fl a{
+  font-size:.81rem;color:var(--steel);
+  transition:color .2s;
+  display:flex;align-items:center;gap:6px;
+}
+.fl a:hover{color:var(--gold2)}
+.fl a::before{content:'—';color:var(--gold);font-size:.6rem}
+.fci{display:flex;gap:11px;margin-bottom:12px;align-items:flex-start}
+.fci-i{
+  width:34px;height:34px;border-radius:7px;flex-shrink:0;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.15);
+  display:flex;align-items:center;justify-content:center;font-size:.84rem;
+}
+.fci-t strong{display:block;font-size:.67rem;color:var(--steel);font-weight:500;margin-bottom:2px;letter-spacing:.5px}
+.fci-t a,.fci-t span{font-size:.83rem;color:var(--white);font-weight:600}
+.fci-t a{color:var(--gold2)}
+.fb2{
+  border-top:1px solid rgba(255,255,255,.05);
+  padding:18px 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:10px;
+}
+.fb2 p{font-size:.76rem;color:var(--steel)}
+.fbl{display:flex;gap:18px}
+.fbl a{font-size:.76rem;color:var(--steel);transition:color .2s}
+.fbl a:hover{color:var(--gold)}
+
+/* FLOATING BUTTONS */
+.fwa{
+  position:fixed;bottom:28px;right:28px;z-index:9998;
+  width:54px;height:54px;border-radius:50%;
+  background:#25d366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);
+  transition:transform .2s;
+}
+.fwa:hover{transform:scale(1.1)}
+.fwa svg{width:27px;height:27px;fill:#fff}
+.fca{
+  position:fixed;bottom:92px;right:28px;z-index:9998;
+  width:54px;height:54px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(201,168,76,.4);
+  font-size:1.25rem;transition:transform .2s;
+}
+.fca:hover{transform:scale(1.1)}
+
+/* REVEAL ANIMATIONS */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .65s,transform .65s}
+.rv.on{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .ft-inner{grid-template-columns:1fr 1fr}
+  .fc{border-right:none;border-bottom:1px solid rgba(255,255,255,.05)}
+  .sg{grid-template-columns:1fr 1fr}
+  .flg{grid-template-columns:1fr 1fr}
+  .wy{grid-template-columns:1fr}
+  .wyi{height:300px}
+  .tg{grid-template-columns:1fr 1fr}
+  .dg{grid-template-columns:1fr 1fr}
+  .fo{grid-template-columns:1fr 1fr}
+  .fr{grid-template-columns:1fr 1fr}
+  .hw{grid-template-columns:1fr 1fr}
+  .hw-line{display:none}
+}
+@media(max-width:640px){
+  .tb{display:none}
+  .nm{display:none;position:fixed;top:70px;left:0;right:0;
+    background:var(--navy);flex-direction:column;align-items:flex-start;
+    padding:22px 5%;border-bottom:1px solid rgba(201,168,76,.15);gap:18px}
+  .nm.open{display:flex}
+  .bur{display:flex}
+  .hst{grid-template-columns:1fr 1fr}
+  .fr{grid-template-columns:1fr}
+  .fr2{grid-template-columns:1fr}
+  .ft-inner{grid-template-columns:1fr}
+  .sg{grid-template-columns:1fr}
+  .flg{grid-template-columns:1fr}
+  .tg{grid-template-columns:1fr}
+  .dg{grid-template-columns:1fr 1fr}
+  .fo{grid-template-columns:1fr}
+  .hbts{flex-direction:column}
+  .hbts .btn-primary,.hbts .btn-wa,.hbts .btn-ghost{justify-content:center}
+  .wy{grid-template-columns:1fr}
+  .hero-img{opacity:.3;width:100%;clip-path:none}
+  .fb2{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/919019178848?text=Hi%20whatAride%2C%20I%20need%20a%20cab!" target="_blank" class="fwa">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<a href="tel:8310260590" class="fca">📞</a>
+
+<!-- TOPBAR -->
+<div class="tb">
+  <a href="mailto:whataride01@gmail.com">✉ whataride01@gmail.com</a>
+  <div class="tbr">
+    <a href="tel:8310260590">📞 8310260590</a>
+    <a href="https://wa.me/919019178848" target="_blank">💬 9019178848</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">what<span>A</span>ride <sub>.in</sub></a>
+  <div class="nm" id="nm">
+    <a href="#services">Services</a>
+    <a href="#fleet">Fleet</a>
+    <a href="#how">How It Works</a>
+    <a href="#faq">FAQ</a>
+    <a href="tel:8310260590" class="ncta">📞 Book Now</a>
+  </div>
+  <div class="bur" id="bur" onclick="document.getElementById('nm').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-geo"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-img"></div>
+  <div class="hc">
+    <div class="hbadge"><div class="hdot"></div>Available 24×7 · Instant Confirmation</div>
+    <!-- CHANGE 1: Tagline updated -->
+    <h1>Bangalore's Premier Cab Service<em>Where Comfort Meets the Traveller.</em></h1>
+    <p>Airport transfers, Mysore cabs, intercity and outstation travel across South India — AC vehicles, verified drivers and honest pricing on every ride.</p>
+    <div class="hbts">
+      <a href="tel:8310260590" class="btn-primary">📞 Call 8310260590</a>
+      <a href="https://wa.me/919019178848?text=Hi%20I%20want%20to%20book%20a%20cab" target="_blank" class="btn-wa">💬 WhatsApp Now</a>
+      <a href="#booking" class="btn-ghost">Get a Quote</a>
+    </div>
+    <div class="hst">
+      <div class="hs"><div class="hsn">5K<span>+</span></div><div class="hsl">Happy Riders</div></div>
+      <div class="hs"><div class="hsn">50<span>+</span></div><div class="hsl">Routes Covered</div></div>
+      <div class="hs"><div class="hsn">4.9<span>★</span></div><div class="hsl">Customer Rating</div></div>
+      <div class="hs"><div class="hsn">24<span>/7</span></div><div class="hsl">Always Available</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="bk" id="booking">
+  <div class="bk-inner">
+    <h2>Book Your Cab Instantly</h2>
+    <p class="bk-sub">Fill the form below and we'll confirm in under 5 minutes via WhatsApp.</p>
+    <div class="tabs">
+      <button class="tab on" onclick="setTab(this)">One Way</button>
+      <button class="tab" onclick="setTab(this)">Round Trip</button>
+      <button class="tab" onclick="setTab(this)">Local / Hourly</button>
+      <button class="tab" onclick="setTab(this)">Airport</button>
+    </div>
+    <div class="bk-form">
+      <div class="fr">
+        <div class="fg"><label>Pickup Location</label><input type="text" id="fp" placeholder="City or area"/></div>
+        <div class="fg"><label>Drop Location</label><input type="text" id="fd" placeholder="Destination"/></div>
+        <div class="fg"><label>Cab Type</label>
+          <select id="fc"><option value="">Select type</option><option>Hatchback (up to 4)</option><option>Sedan (up to 4)</option><option>SUV / Innova (up to 7)</option><option>Tempo Traveller (up to 12)</option></select>
+        </div>
+        <div class="fg"><label>&nbsp;</label><button class="qbtn" onclick="bookNow()">Get Quote →</button></div>
+      </div>
+      <div class="fr2">
+        <div class="fg"><label>Travel Date</label><input type="date" id="fdt"/></div>
+        <div class="fg"><label>Pickup Time</label><input type="time" id="ftm"/></div>
+        <div class="fg"><label>Your Phone</label><input type="tel" id="fph" placeholder="+91 XXXXX XXXXX"/></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES STRIP -->
+<section class="ft">
+  <div class="ft-inner">
+    <div class="fc rv"><div class="fi">🛡️</div><div><h4>Safe &amp; Verified</h4><p>Police-verified drivers, GPS-tracked trips and 24/7 emergency support on every ride.</p></div></div>
+    <div class="fc rv"><div class="fi">💰</div><div><h4>Transparent Pricing</h4><p>No surge. No hidden charges. All tolls included. You pay exactly what's quoted.</p></div></div>
+    <div class="fc rv"><div class="fi">⚡</div><div><h4>Always On Time</h4><p>Real-time traffic tracking. Drivers dispatched early — you'll never miss a flight.</p></div></div>
+    <div class="fc rv"><div class="fi">🌐</div><div><h4>24 / 7 Support</h4><p>Call or WhatsApp any time. We respond in minutes, day or night, every day.</p></div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services" style="background:var(--navy)">
+  <div class="sh rv"><div class="stag">What We Offer</div><div class="st">Our Cab Services</div><p class="ss">From airport runs to multi-day tours — whatAride covers every journey you need.</p></div>
+  <div class="sg">
+    <div class="sc rv"><div class="si"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=500&q=70" alt="Airport"/><div class="sov"></div><div class="slb">Most Popular</div></div><div class="sb"><h3>Airport Transfers</h3><p>Pickup &amp; drop to BLR Airport. Flight tracking included — we wait for delays at no extra charge.</p><span class="sl">Book Airport Cab</span></div></div>
+    <div class="sc rv"><div class="si"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=500&q=70" alt="Outstation"/><div class="sov"></div><div class="slb">Outstation</div></div><div class="sb"><h3>Outstation Trips</h3><p>One-way &amp; round-trip cabs to Mysore, Coorg, Ooty, Hampi, Goa, Chennai and beyond.</p><span class="sl">Explore Routes</span></div></div>
+    <div class="sc rv"><div class="si"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=500&q=70" alt="Local"/><div class="sov"></div><div class="slb">City Rides</div></div><div class="sb"><h3>Local / Hourly Rental</h3><p>Flexible hourly packages for shopping, meetings, hospital visits and city errands.</p><span class="sl">Book Hourly</span></div></div>
+    <div class="sc rv"><div class="si"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&q=70" alt="Corporate"/><div class="sov"></div><div class="slb">Corporate</div></div><div class="sb"><h3>Corporate Travel</h3><p>Fleet for IT parks, conferences &amp; employee transport. Monthly billing available.</p><span class="sl">Enquire Now</span></div></div>
+    <div class="sc rv"><div class="si"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=70" alt="Tours"/><div class="sov"></div><div class="slb">Tours</div></div><div class="sb"><h3>Karnataka Tour Packages</h3><p>Curated sightseeing packages for Mysore, Coorg, Chikmagalur &amp; Hampi with driver-guides.</p><span class="sl">See Packages</span></div></div>
+    <div class="sc rv"><div class="si"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500&q=70" alt="Events"/><div class="sov"></div><div class="slb">Events</div></div><div class="sb"><h3>Wedding &amp; Events</h3><p>Fleet bookings for weddings &amp; conferences. Multiple vehicles, fixed timings, clean execution.</p><span class="sl">Get Fleet Quote</span></div></div>
+  </div>
+</section>
+
+<!-- CHANGE 2: Popular Routes section REMOVED -->
+
+<!-- CHANGE 3: Fleet — prices removed, car models updated with clean cab photos -->
+<section class="sec" id="fleet" style="background:var(--navy2)">
+  <div class="sh rv"><div class="stag">Our Fleet</div><div class="st">Choose Your Ride</div><p class="ss">All vehicles are AC, sanitized before every trip and GPS-tracked for complete safety.</p></div>
+  <div class="flg">
+
+    <!-- Hatchback: Swift -->
+    <div class="flc rv">
+      <div class="fli">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80" alt="Swift Hatchback"/>
+        <div class="flbg">Economy</div>
+      </div>
+      <div class="flb">
+        <h3>Hatchback</h3>
+        <p>Maruti Swift / Tata Altroz — compact, efficient and ideal for city rides and short outstation trips.</p>
+        <div class="flt">
+          <span class="fltg">✅ AC</span>
+          <span class="fltg">👥 4 Seats</span>
+          <span class="fltg">🧳 Compact Boot</span>
+          <span class="fltg">⛽ Fuel Efficient</span>
+        </div>
+        <div class="flr">
+          <button class="flbt" onclick="qb('Hatchback')">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sedan: Honda City / Dzire -->
+    <div class="flc rv">
+      <div class="fli">
+        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=600&q=80" alt="Sedan"/>
+        <div class="flbg">Most Booked</div>
+      </div>
+      <div class="flb">
+        <h3>Sedan</h3>
+        <p>Honda City / Swift Dzire — spacious, premium and most popular for outstation and airport trips.</p>
+        <div class="flt">
+          <span class="fltg">✅ AC</span>
+          <span class="fltg">👥 4 Seats</span>
+          <span class="fltg">🧳 Large Boot</span>
+          <span class="fltg">⭐ Most Popular</span>
+        </div>
+        <div class="flr">
+          <button class="flbt" onclick="qb('Sedan')">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUV: Innova Crysta -->
+    <div class="flc rv">
+      <div class="fli">
+        <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&q=80" alt="Innova Crysta SUV"/>
+        <div class="flbg">Best for Groups</div>
+      </div>
+      <div class="flb">
+        <h3>Toyota Innova Crysta</h3>
+        <p>The gold standard for group travel — powerful, plush and perfect for families up to 7 passengers.</p>
+        <div class="flt">
+          <span class="fltg">✅ AC</span>
+          <span class="fltg">👥 7 Seats</span>
+          <span class="fltg">🧳 Extra Luggage</span>
+          <span class="fltg">⭐ Premium SUV</span>
+        </div>
+        <div class="flr">
+          <button class="flbt" onclick="qb('Toyota Innova Crysta')">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="how" style="background:var(--navy)">
+  <div class="sh rv"><div class="stag">Simple Process</div><div class="st">Book in 4 Easy Steps</div></div>
+  <div class="hw">
+    <div class="hw-line"></div>
+    <div class="hs2 rv"><div class="stn">01</div><span class="step-icon">📍</span><h4>Enter Locations</h4><p>Add pickup and drop via form, call or WhatsApp.</p></div>
+    <div class="hs2 rv"><div class="stn">02</div><span class="step-icon">🚗</span><h4>Choose Vehicle</h4><p>Pick the cab type for your group size and budget.</p></div>
+    <div class="hs2 rv"><div class="stn">03</div><span class="step-icon">✅</span><h4>Confirm Booking</h4><p>Instant confirmation with driver details via WhatsApp.</p></div>
+    <div class="hs2 rv"><div class="stn">04</div><span class="step-icon">🎉</span><h4>Enjoy Your Ride</h4><p>Driver arrives on time — sit back and relax.</p></div>
+  </div>
+</section>
+
+<!-- WHY US — CHANGE 4: Replaced van/landscape photo with a proper cab car photo -->
+<section class="sec" style="background:var(--navy2)">
+  <div class="wy">
+    <div class="wyi rv">
+      <img src="https://images.unsplash.com/photo-1570833775576-1e5c2c60b5ee?w=700&q=80" alt="Premium cab car"/>
+      <div class="wyi-overlay"></div>
+      <div class="wb1"><div class="wn">4.9★</div><div class="wl">Customer Rating</div></div>
+      <div class="wb2">5,000+ happy riders since 2024 🎉</div>
+    </div>
+    <div>
+      <div class="stag rv">Why Choose Us</div>
+      <div class="st rv">The whatAride Difference</div>
+      <p class="ss rv" style="text-align:left;margin:0 0 24px">Your travel partner — focused on reliability, honesty and peace of mind on every single trip.</p>
+      <div class="wfs">
+        <div class="wf rv"><div class="wfi">💰</div><div><h4>Transparent Pricing</h4><p>No surge, no hidden fees. Tolls included. Pay exactly what's quoted — always.</p></div></div>
+        <div class="wf rv"><div class="wfi">🛡️</div><div><h4>Verified Drivers</h4><p>Police verification, license checks and safety training before every driver joins us.</p></div></div>
+        <div class="wf rv"><div class="wfi">⏱️</div><div><h4>Punctuality Guaranteed</h4><p>Real-time traffic monitoring. Drivers dispatched early so you're never late.</p></div></div>
+        <div class="wf rv"><div class="wfi">🚿</div><div><h4>Spotlessly Clean Vehicles</h4><p>Every cab cleaned and sanitized before your trip. AC checked, fuel topped.</p></div></div>
+        <div class="wf rv"><div class="wfi">🌐</div><div><h4>24 / 7 Support</h4><p>Call or WhatsApp any time. We respond in minutes — not hours.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="sec" style="background:var(--navy)">
+  <div class="sh rv"><div class="stag">Explore Karnataka</div><div class="st">Top Destinations</div></div>
+  <div class="dg">
+    <a href="https://wa.me/919019178848?text=Mysore%20cab" target="_blank" class="dc rv"><img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=500&q=70" alt="Mysore"/><div class="dov"></div><div class="dc-gold"></div><div class="di"><div class="dn">Mysore</div><div class="dd">145 km · 3 hrs</div></div></a>
+    <a href="https://wa.me/919019178848?text=Coorg%20cab" target="_blank" class="dc rv"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=500&q=70" alt="Coorg"/><div class="dov"></div><div class="dc-gold"></div><div class="di"><div class="dn">Coorg</div><div class="dd">250 km · 5 hrs</div></div></a>
+    <a href="https://wa.me/919019178848?text=Chikmagalur%20cab" target="_blank" class="dc rv"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=70" alt="Chikmagalur"/><div class="dov"></div><div class="dc-gold"></div><div class="di"><div class="dn">Chikmagalur</div><div class="dd">245 km · 5 hrs</div></div></a>
+    <a href="https://wa.me/919019178848?text=Ooty%20cab" target="_blank" class="dc rv"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=70" alt="Ooty"/><div class="dov"></div><div class="dc-gold"></div><div class="di"><div class="dn">Ooty</div><div class="dd">270 km · 6 hrs</div></div></a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec" id="reviews" style="background:var(--navy2)">
+  <div class="sh rv"><div class="stag">Customer Reviews</div><div class="st">What Our Riders Say</div></div>
+  <div class="tg">
+    <div class="tc rv"><div class="tst">★★★★★</div><p class="tq">"Booked a 4 AM Mysore cab — driver was perfectly on time, car spotless, pricing exactly as quoted. No hidden charges at all. Will definitely book again!"</p><div class="ta"><div class="tav">R</div><div><div class="tn">Rahul Menon</div><div class="tl">HSR Layout, Bangalore</div></div></div></div>
+    <div class="tc rv"><div class="tst">★★★★★</div><p class="tq">"Flight was delayed 2 hours and the driver waited without any extra charge. Such rare service! whatAride is my go-to for all airport transfers now."</p><div class="ta"><div class="tav">P</div><div><div class="tn">Priya Shetty</div><div class="tl">Mysore</div></div></div></div>
+    <div class="tc rv"><div class="tst">★★★★★</div><p class="tq">"Innova for our family Coorg trip — 6 of us with luggage. Super comfortable, driver knew all the scenic stops. Excellent value for money!"</p><div class="ta"><div class="tav">A</div><div><div class="tn">Anitha K.</div><div class="tl">Koramangala</div></div></div></div>
+    <div class="tc rv"><div class="tst">★★★★★</div><p class="tq">"Use whatAride for all corporate outings. Group bookings handled smoothly, billing is clean. The entire team recommends them unconditionally!"</p><div class="ta"><div class="tav">V</div><div><div class="tn">Vijay Tiwari</div><div class="tl">Whitefield</div></div></div></div>
+    <div class="tc rv"><div class="tst">★★★★★</div><p class="tq">"Smooth Bangalore–Mysore ride. Driver was friendly, suggested a great breakfast stop. Booking again for the return trip without a second thought!"</p><div class="ta"><div class="tav">S</div><div><div class="tn">Santhosh Kumar</div><div class="tl">Mysore</div></div></div></div>
+    <div class="tc rv"><div class="tst">★★★★★</div><p class="tq">"Midnight hospital trip — WhatsApp response in 5 minutes, driver at door in 20. Absolute lifesaver. Thank you whatAride, you were there when it mattered."</p><div class="ta"><div class="tav">D</div><div><div class="tn">Deepa Nair</div><div class="tl">Indiranagar</div></div></div></div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="sec" style="background:var(--navy);padding:56px 5%">
+  <div class="sh rv"><div class="stag">Flexible Payments</div><div class="st">Multiple Payment Options</div><p class="ss">Pay however you like — we support all major methods.</p></div>
+  <div class="pi">
+    <div class="pc">📱 UPI</div>
+    <div class="pc">💳 Debit Card</div>
+    <div class="pc">💳 Credit Card</div>
+    <div class="pc">🏦 Net Banking</div>
+    <div class="pc">📲 GPay / PhonePe</div>
+    <div class="pc">💵 Cash</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="background:var(--navy2)">
+  <div class="sh rv"><div class="stag">Got Questions?</div><div class="st">Frequently Asked Questions</div></div>
+  <div class="fq-w">
+    <div class="fi2 rv" onclick="tfaq(this)"><div class="fq2">What is the best way to book a cab with whatAride?<div class="fic">+</div></div><div class="fa2"><p>Call <strong>8310260590</strong>, WhatsApp <strong>9019178848</strong>, or use the booking form above. We confirm instantly with driver details via SMS/WhatsApp.</p></div></div>
+    <div class="fi2 rv" onclick="tfaq(this)"><div class="fq2">Is the service available 24/7?<div class="fic">+</div></div><div class="fa2"><p>Yes! whatAride operates 24/7 including all public holidays. We specialize in early-morning and late-night airport trips.</p></div></div>
+    <div class="fi2 rv" onclick="tfaq(this)"><div class="fq2">Are there hidden charges or toll fees?<div class="fic">+</div></div><div class="fa2"><p>None at all. Your quoted fare includes all tolls, state permit fees and driver bata. You pay exactly what's quoted — no surprises.</p></div></div>
+    <div class="fi2 rv" onclick="tfaq(this)"><div class="fq2">What vehicles are available?<div class="fic">+</div></div><div class="fa2"><p>Hatchbacks (Maruti Swift, Tata Altroz), Sedans (Honda City, Swift Dzire), Toyota Innova Crysta for groups. All AC and well-maintained.</p></div></div>
+    <div class="fi2 rv" onclick="tfaq(this)"><div class="fq2">What is the Bangalore to Mysore cab fare?<div class="fic">+</div></div><div class="fa2"><p>~145 km. Contact us for the latest rates — we offer the best prices with no hidden charges. WhatsApp or call for an instant quote.</p></div></div>
+    <div class="fi2 rv" onclick="tfaq(this)"><div class="fq2">Do you offer intercity cabs from Bangalore?<div class="fic">+</div></div><div class="fa2"><p>Yes! One-way and round-trip cabs to Mysore, Coorg, Ooty, Chennai, Chikmagalur, Hampi, Goa and many more South India destinations.</p></div></div>
+    <div class="fi2 rv" onclick="tfaq(this)"><div class="fq2">How early should I book an airport cab?<div class="fic">+</div></div><div class="fa2"><p>We recommend 1–2 hours before pickup. For early-morning flights, book the night before. Last-minute bookings accepted based on availability.</p></div></div>
+    <div class="fi2 rv" onclick="tfaq(this)"><div class="fq2">Do you accept online payments?<div class="fic">+</div></div><div class="fa2"><p>Yes — UPI (GPay, PhonePe, Paytm), debit/credit cards, net banking and cash. Pay in advance or at trip end.</p></div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="stag">Ready to Ride?</div>
+  <h2>Book Your whatAride Cab Today</h2>
+  <p>Call, WhatsApp or email — we confirm in under 5 minutes.</p>
+  <div class="ctas">
+    <a href="tel:8310260590" class="btn-primary" style="font-size:.93rem;padding:14px 30px">📞 Call 8310260590</a>
+    <a href="https://wa.me/919019178848?text=Hi%20I%20want%20to%20book%20a%20cab" target="_blank" class="btn-wa" style="font-size:.93rem;padding:14px 30px">💬 WhatsApp 9019178848</a>
+    <a href="mailto:whataride01@gmail.com" class="btn-ghost" style="font-size:.93rem;padding:14px 30px">✉️ Email Us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fo">
+    <div class="fbr">
+      <span class="logo2">what<span style="color:var(--gold)">A</span>ride</span>
+      <p>Founded in 2024, whatAride is Bangalore's trusted cab service for airport transfers, Mysore trips, outstation rides and local travel. Clean vehicles, verified drivers, transparent pricing — every time.</p>
+      <div class="fsc">
+        <a href="https://wa.me/919019178848" target="_blank" class="fsb">💬</a>
+        <a href="tel:8310260590" class="fsb">📞</a>
+        <a href="mailto:whataride01@gmail.com" class="fsb">✉️</a>
+      </div>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <ul class="fl">
+        <li><a href="#services">Airport Transfers</a></li>
+        <li><a href="#services">Outstation Cabs</a></li>
+        <li><a href="#services">Local / Hourly</a></li>
+        <li><a href="#services">Corporate Travel</a></li>
+        <li><a href="#services">Tour Packages</a></li>
+        <li><a href="#services">Wedding Fleet</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Our Fleet</h5>
+      <ul class="fl">
+        <li><a href="#fleet">Hatchback</a></li>
+        <li><a href="#fleet">Sedan (Honda City / Dzire)</a></li>
+        <li><a href="#fleet">Toyota Innova Crysta</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact Us</h5>
+      <div class="fci"><div class="fci-i">📞</div><div class="fci-t"><strong>Call / Book</strong><a href="tel:8310260590">8310260590</a></div></div>
+      <div class="fci"><div class="fci-i">💬</div><div class="fci-t"><strong>WhatsApp</strong><a href="https://wa.me/919019178848" target="_blank">9019178848</a></div></div>
+      <div class="fci"><div class="fci-i">✉️</div><div class="fci-t"><strong>Email</strong><a href="mailto:whataride01@gmail.com">whataride01@gmail.com</a></div></div>
+      <div class="fci"><div class="fci-i">📍</div><div class="fci-t"><strong>Base</strong><span>Bangalore &amp; Mysore, Karnataka</span></div></div>
+      <div class="fci"><div class="fci-i">🕐</div><div class="fci-t"><strong>Hours</strong><span>24 × 7 · All Days</span></div></div>
+    </div>
+  </div>
+  <div class="fb2">
+    <p>© 2025 whatAride.in — All Rights Reserved. Made with ❤️ in Karnataka.</p>
+    <div class="fbl"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Cancellation</a></div>
+  </div>
+</footer>
+
+<script>
+function setTab(el){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));el.classList.add('on')}
+function tfaq(el){const o=el.classList.contains('op');document.querySelectorAll('.fi2').forEach(f=>f.classList.remove('op'));if(!o)el.classList.add('op')}
+function bookNow(){
+  var p=document.getElementById('fp').value||'N/A',d=document.getElementById('fd').value||'N/A',
+  c=document.getElementById('fc').value||'N/A',dt=document.getElementById('fdt').value||'N/A',
+  t=document.getElementById('ftm').value||'N/A',ph=document.getElementById('fph').value||'N/A';
+  var m=encodeURIComponent('Hi whatAride!\nBooking Request:\nPickup: '+p+'\nDrop: '+d+'\nCab: '+c+'\nDate: '+dt+'\nTime: '+t+'\nPhone: '+ph+'\nPlease confirm.');
+  window.open('https://wa.me/919019178848?text='+m,'_blank');
+}
+function qb(cab){window.open('https://wa.me/919019178848?text='+encodeURIComponent('Hi whatAride! I want to book a '+cab+'. Please share availability and rates.'),'_blank')}
+document.querySelectorAll('.sl').forEach(s=>{s.style.cursor='pointer';s.addEventListener('click',function(){window.open('https://wa.me/919019178848?text=Hi%20whatAride%2C%20I%20need%20a%20cab%20booking.','_blank')})});
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+document.querySelectorAll('.nm a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nm').classList.remove('open')})});
+var di=document.getElementById('fdt');if(di){di.min=new Date().toISOString().split('T')[0];di.value=di.min}
+</script>
+</body>
+</html>
